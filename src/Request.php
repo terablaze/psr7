@@ -10,7 +10,7 @@ use Psr\Http\Message\{RequestInterface, StreamInterface, UriInterface};
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  */
-final class Request implements RequestInterface
+class Request implements RequestInterface
 {
     use MessageTrait;
     use RequestTrait;

@@ -1,9 +1,12 @@
 {
-    "name": "nyholm/psr7",
-    "description": "A fast PHP7 implementation of PSR-7",
+    "name": "terablaze/psr7",
+    "description": "A fast PHP7 implementation of PSR-7 (A fork of nyholm/psr7, removing final clause from all classes making them extendable)",
     "license": "MIT",
-    "keywords": ["psr-7", "psr-17"],
-    "homepage": "http://tnyholm.se",
+    "keywords": [
+        "psr-7",
+        "psr-17"
+    ],
+    "homepage": "https://github.com/terablaze",
     "authors": [
         {
             "name": "Tobias Nyholm",
@@ -12,6 +15,10 @@
         {
             "name": "Martijn van der Ven",
             "email": "martijn@vanderven.se"
+        },
+        {
+            "name": "Tomiwa Ibiwoye",
+            "email": "tomiwa@teraboxx.com"
         }
     ],
     "require": {

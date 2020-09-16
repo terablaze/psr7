@@ -11,7 +11,7 @@ use Psr\Http\Message\{StreamInterface, UploadedFileInterface};
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  */
-final class UploadedFile implements UploadedFileInterface
+class UploadedFile implements UploadedFileInterface
 {
     /** @var array */
     private const ERRORS = [

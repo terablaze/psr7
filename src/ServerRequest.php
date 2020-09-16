@@ -11,7 +11,7 @@ use Psr\Http\Message\{ServerRequestInterface, StreamInterface, UploadedFileInter
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  */
-final class ServerRequest implements ServerRequestInterface
+class ServerRequest implements ServerRequestInterface
 {
     use MessageTrait;
     use RequestTrait;

@@ -13,7 +13,7 @@ use Symfony\Component\ErrorHandler\ErrorHandler as SymfonyErrorHandler;
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  */
-final class Stream implements StreamInterface
+class Stream implements StreamInterface
 {
     /** @var resource|null A resource reference */
     private $stream;
