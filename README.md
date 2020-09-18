@@ -27,7 +27,7 @@ A super lightweight PSR-7 implementation. Very strict and very fast.
 ## Installation
 
 ```bash
-composer require nyholm/psr7
+composer require terablaze/psr7
 ```
 
 If you are using Symfony Flex then you get all message factories registered as services. 
@@ -66,11 +66,11 @@ $response = $psr18Client->sendRequest($request);
 
 ### Create server requests
 
-The [`nyholm/psr7-server`](https://github.com/Nyholm/psr7-server) package can be used 
+The [`terablaze/psr7-server`](https://github.com/terablaze/psr7-server) package can be used 
 to create server requests from PHP superglobals.
 
 ```bash
-composer require nyholm/psr7-server
+composer require terablaze/psr7-server
 ```
 
 ```php
