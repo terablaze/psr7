@@ -26,7 +26,7 @@ parameters:
 			path: src/Stream.php
 
 		-
-			message: "#^Method Nyholm\\\\Psr7\\\\Stream\\:\\:__toString\\(\\) should return string but returns bool\\.$#"
+			message: "#^Method TeraBlaze\\\\Psr7\\\\Stream\\:\\:__toString\\(\\) should return string but returns bool\\.$#"
 			count: 1
 			path: src/Stream.php
 

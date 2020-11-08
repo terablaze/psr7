@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nyholm\Psr7;
+namespace TeraBlaze\Psr7;
 
 use Psr\Http\Message\UriInterface;
 
@@ -10,6 +10,7 @@ use Psr\Http\Message\UriInterface;
  * @author Michael Dowling and contributors to guzzlehttp/psr7
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
+ * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
  *
  * @internal should not be used outside of Nyholm/Psr7 as it does not fall under our BC promise
  */

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Nyholm\Psr7\Factory;
+namespace Tests\TeraBlaze\Psr7\Factory;
 
-use Nyholm\Psr7\Factory\Psr17Factory;
+use TeraBlaze\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
 class Psr17FactoryTest extends TestCase

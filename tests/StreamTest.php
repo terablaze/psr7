@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Nyholm\Psr7;
+namespace Tests\TeraBlaze\Psr7;
 
-use Nyholm\Psr7\Stream;
+use TeraBlaze\Psr7\Stream;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\ErrorHandler\ErrorHandler as SymfonyErrorHandler;
 
 /**
- * @covers \Nyholm\Psr7\Stream
+ * @covers \TeraBlaze\Psr7\Stream
  */
 class StreamTest extends TestCase
 {
@@ -178,9 +178,9 @@ class StreamTest extends TestCase
 
     public function testUnseekableStreamWrapper()
     {
-        stream_wrapper_register('nyholm-psr7-test', TestStreamWrapper::class);
-        $handle = fopen('nyholm-psr7-test://', 'r');
-        stream_wrapper_unregister('nyholm-psr7-test');
+        stream_wrapper_register('terablaze-psr7-test', TestStreamWrapper::class);
+        $handle = fopen('terablaze-psr7-test://', 'r');
+        stream_wrapper_unregister('terablaze-psr7-test');
 
         $stream = Stream::create($handle);
         $this->assertFalse($stream->isSeekable());

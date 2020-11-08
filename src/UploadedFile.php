@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nyholm\Psr7;
+namespace TeraBlaze\Psr7;
 
 use Psr\Http\Message\{StreamInterface, UploadedFileInterface};
 
@@ -10,6 +10,7 @@ use Psr\Http\Message\{StreamInterface, UploadedFileInterface};
  * @author Michael Dowling and contributors to guzzlehttp/psr7
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
+ * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
  */
 class UploadedFile implements UploadedFileInterface
 {

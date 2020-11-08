@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests\Nyholm\Psr7;
+namespace Tests\TeraBlaze\Psr7;
 
-use Nyholm\Psr7\Stream;
-use Nyholm\Psr7\UploadedFile;
+use TeraBlaze\Psr7\Stream;
+use TeraBlaze\Psr7\UploadedFile;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * @covers \Nyholm\Psr7\UploadedFile
+ * @covers \TeraBlaze\Psr7\UploadedFile
  */
 class UploadedFileTest extends TestCase
 {
@@ -171,7 +171,7 @@ class UploadedFileTest extends TestCase
      */
     public function testMoveRaisesExceptionForInvalidPath($path)
     {
-        $stream = (new \Nyholm\Psr7\Factory\Psr17Factory())->createStream('Foo bar!');
+        $stream = (new \TeraBlaze\Psr7\Factory\Psr17Factory())->createStream('Foo bar!');
         $upload = new UploadedFile($stream, 0, UPLOAD_ERR_OK);
 
         $this->cleanup[] = $path;
@@ -183,7 +183,7 @@ class UploadedFileTest extends TestCase
 
     public function testMoveCannotBeCalledMoreThanOnce()
     {
-        $stream = (new \Nyholm\Psr7\Factory\Psr17Factory())->createStream('Foo bar!');
+        $stream = (new \TeraBlaze\Psr7\Factory\Psr17Factory())->createStream('Foo bar!');
         $upload = new UploadedFile($stream, 0, UPLOAD_ERR_OK);
 
         $this->cleanup[] = $to = tempnam(sys_get_temp_dir(), 'diac');
@@ -197,7 +197,7 @@ class UploadedFileTest extends TestCase
 
     public function testCannotRetrieveStreamAfterMove()
     {
-        $stream = (new \Nyholm\Psr7\Factory\Psr17Factory())->createStream('Foo bar!');
+        $stream = (new \TeraBlaze\Psr7\Factory\Psr17Factory())->createStream('Foo bar!');
         $upload = new UploadedFile($stream, 0, UPLOAD_ERR_OK);
 
         $this->cleanup[] = $to = tempnam(sys_get_temp_dir(), 'diac');

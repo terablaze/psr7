@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Nyholm\Psr7\Factory;
+namespace TeraBlaze\Psr7\Factory;
 
-use Nyholm\Psr7\{Request, Response, ServerRequest, Stream, UploadedFile, Uri};
+use TeraBlaze\Psr7\{Request, Response, ServerRequest, Stream, UploadedFile, Uri};
 use Psr\Http\Message\{RequestFactoryInterface, RequestInterface, ResponseFactoryInterface, ResponseInterface, ServerRequestFactoryInterface, ServerRequestInterface, StreamFactoryInterface, StreamInterface, UploadedFileFactoryInterface, UploadedFileInterface, UriFactoryInterface, UriInterface};
 
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
+ * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
  */
 class Psr17Factory implements RequestFactoryInterface, ResponseFactoryInterface, ServerRequestFactoryInterface, StreamFactoryInterface, UploadedFileFactoryInterface, UriFactoryInterface
 {

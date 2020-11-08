@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Nyholm\Psr7\Integration;
+namespace Tests\TeraBlaze\Psr7\Integration;
 
 use Http\Psr7Test\StreamIntegrationTest;
-use Nyholm\Psr7\Stream;
+use TeraBlaze\Psr7\Stream;
 
 class StreamTest extends StreamIntegrationTest
 {

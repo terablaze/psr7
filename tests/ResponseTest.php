@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests\Nyholm\Psr7;
+namespace Tests\TeraBlaze\Psr7;
 
-use Nyholm\Psr7\Response;
+use TeraBlaze\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * @covers \Nyholm\Psr7\MessageTrait
- * @covers \Nyholm\Psr7\Response
+ * @covers \TeraBlaze\Psr7\MessageTrait
+ * @covers \TeraBlaze\Psr7\Response
  */
 class ResponseTest extends TestCase
 {
@@ -150,7 +150,7 @@ class ResponseTest extends TestCase
 
     public function testWithBody()
     {
-        $b = (new \Nyholm\Psr7\Factory\Psr17Factory())->createStream('0');
+        $b = (new \TeraBlaze\Psr7\Factory\Psr17Factory())->createStream('0');
         $r = (new Response())->withBody($b);
         $this->assertInstanceOf(StreamInterface::class, $r->getBody());
         $this->assertSame('0', (string) $r->getBody());

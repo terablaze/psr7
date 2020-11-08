@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\Nyholm\Psr7;
+namespace Tests\TeraBlaze\Psr7;
 
-use Nyholm\Psr7\ServerRequest;
-use Nyholm\Psr7\UploadedFile;
+use TeraBlaze\Psr7\ServerRequest;
+use TeraBlaze\Psr7\UploadedFile;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Nyholm\Psr7\ServerRequest
+ * @covers \TeraBlaze\Psr7\ServerRequest
  */
 class ServerRequestTest extends TestCase
 {

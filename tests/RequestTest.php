@@ -1,14 +1,14 @@
 <?php
 
-namespace Tests\Nyholm\Psr7;
+namespace Tests\TeraBlaze\Psr7;
 
-use Nyholm\Psr7\Request;
-use Nyholm\Psr7\Uri;
+use TeraBlaze\Psr7\Request;
+use TeraBlaze\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * @covers \Nyholm\Psr7\Request
+ * @covers \TeraBlaze\Psr7\Request
  */
 class RequestTest extends TestCase
 {
@@ -108,13 +108,13 @@ class RequestTest extends TestCase
 
     public function testGetRequestTarget()
     {
-        $r = new Request('GET', 'https://nyholm.tech');
+        $r = new Request('GET', 'https://teraboxx.com');
         $this->assertEquals('/', $r->getRequestTarget());
 
-        $r = new Request('GET', 'https://nyholm.tech/foo?bar=baz');
+        $r = new Request('GET', 'https://teraboxx.com/foo?bar=baz');
         $this->assertEquals('/foo?bar=baz', $r->getRequestTarget());
 
-        $r = new Request('GET', 'https://nyholm.tech?bar=baz');
+        $r = new Request('GET', 'https://teraboxx.com?bar=baz');
         $this->assertEquals('/?bar=baz', $r->getRequestTarget());
     }
 
@@ -278,20 +278,20 @@ class RequestTest extends TestCase
     public function testUpdateHostFromUri()
     {
         $request = new Request('GET', '/');
-        $request = $request->withUri(new Uri('https://nyholm.tech'));
-        $this->assertEquals('nyholm.tech', $request->getHeaderLine('Host'));
+        $request = $request->withUri(new Uri('https://teraboxx.com'));
+        $this->assertEquals('teraboxx.com', $request->getHeaderLine('Host'));
 
         $request = new Request('GET', 'https://example.com/');
         $this->assertEquals('example.com', $request->getHeaderLine('Host'));
-        $request = $request->withUri(new Uri('https://nyholm.tech'));
-        $this->assertEquals('nyholm.tech', $request->getHeaderLine('Host'));
+        $request = $request->withUri(new Uri('https://teraboxx.com'));
+        $this->assertEquals('teraboxx.com', $request->getHeaderLine('Host'));
 
         $request = new Request('GET', '/');
-        $request = $request->withUri(new Uri('https://nyholm.tech:8080'));
-        $this->assertEquals('nyholm.tech:8080', $request->getHeaderLine('Host'));
+        $request = $request->withUri(new Uri('https://teraboxx.com:8080'));
+        $this->assertEquals('teraboxx.com:8080', $request->getHeaderLine('Host'));
 
         $request = new Request('GET', '/');
-        $request = $request->withUri(new Uri('https://nyholm.tech:443'));
-        $this->assertEquals('nyholm.tech', $request->getHeaderLine('Host'));
+        $request = $request->withUri(new Uri('https://teraboxx.com:443'));
+        $this->assertEquals('teraboxx.com', $request->getHeaderLine('Host'));
     }
 }

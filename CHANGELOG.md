@@ -74,7 +74,7 @@ All notable changes to this project will be documented in this file, in reverse 
 - `ServerRequestFactory()` was removed in favor for `Psr17Factory`.
 - `StreamFactory`, `UriFactory`, abd `MessageFactory`. Use `HttplugFactory` instead.
 - `ServerRequestFactory::createServerRequestFromArray`, `ServerRequestFactory::createServerRequestFromArrays` and
-  `ServerRequestFactory::createServerRequestFromGlobals`. Please use the new `nyholm/psr7-server` instead.
+  `ServerRequestFactory::createServerRequestFromGlobals`. Please use the new `terablaze/psr7-server` instead.
 
 ## 0.3.0
 

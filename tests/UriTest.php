@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Nyholm\Psr7;
+namespace Tests\TeraBlaze\Psr7;
 
-use Nyholm\Psr7\Uri;
+use TeraBlaze\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Nyholm\Psr7\Uri
+ * @covers \TeraBlaze\Psr7\Uri
  */
 class UriTest extends TestCase
 {

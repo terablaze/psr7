@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nyholm\Psr7;
+namespace TeraBlaze\Psr7;
 
 /**
  * Trait implementing a locale-independent lowercasing logic.

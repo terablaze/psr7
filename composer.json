@@ -39,12 +39,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Nyholm\\Psr7\\": "src/"
+            "TeraBlaze\\Psr7\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Nyholm\\Psr7\\": "tests/"
+            "Tests\\TeraBlaze\\Psr7\\": "tests/"
         }
     },
     "scripts": {
