@@ -11,6 +11,8 @@ use Psr\Http\Message\{RequestFactoryInterface, RequestInterface, ResponseFactory
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
+ *
+ * @final This class should never be extended. See https://github.com/Nyholm/psr7/blob/master/doc/final.md
  */
 class Psr17Factory implements RequestFactoryInterface, ResponseFactoryInterface, ServerRequestFactoryInterface, StreamFactoryInterface, UploadedFileFactoryInterface, UriFactoryInterface
 {
@@ -36,9 +38,14 @@ class Psr17Factory implements RequestFactoryInterface, ResponseFactoryInterface,
 
     public function createStreamFromFile(string $filename, string $mode = 'r'): StreamInterface
     {
-        $resource = @\fopen($filename, $mode);
+        try {
+            $resource = @\fopen($filename, $mode);
+        } catch (\Throwable $e) {
+            throw new \RuntimeException('The file ' . $filename . ' cannot be opened.');
+        }
+
         if (false === $resource) {
-            if ('' === $mode || false === \in_array($mode[0], ['r', 'w', 'a', 'x', 'c'])) {
+            if ('' === $mode || false === \in_array($mode[0], ['r', 'w', 'a', 'x', 'c'], true)) {
                 throw new \InvalidArgumentException('The mode ' . $mode . ' is invalid.');
             }
 
