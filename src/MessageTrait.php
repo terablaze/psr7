@@ -18,8 +18,6 @@ use Psr\Http\Message\StreamInterface;
  */
 trait MessageTrait
 {
-    use LowercaseTrait;
-
     /** @var array Map of all registered headers, as original name => array of values */
     private $headers = [];
 
@@ -56,12 +54,12 @@ trait MessageTrait
 
     public function hasHeader($header): bool
     {
-        return isset($this->headerNames[self::lowercase($header)]);
+        return isset($this->headerNames[\strtr($header, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')]);
     }
 
     public function getHeader($header): array
     {
-        $header = self::lowercase($header);
+        $header = \strtr($header, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz');
         if (!isset($this->headerNames[$header])) {
             return [];
         }
@@ -79,7 +77,7 @@ trait MessageTrait
     public function withHeader($header, $value): self
     {
         $value = $this->validateAndTrimHeader($header, $value);
-        $normalized = self::lowercase($header);
+        $normalized = \strtr($header, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz');
 
         $new = clone $this;
         if (isset($new->headerNames[$normalized])) {
@@ -105,7 +103,7 @@ trait MessageTrait
 
     public function withoutHeader($header): self
     {
-        $normalized = self::lowercase($header);
+        $normalized = \strtr($header, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz');
         if (!isset($this->headerNames[$normalized])) {
             return $this;
         }
@@ -147,7 +145,7 @@ trait MessageTrait
                 $header = (string) $header;
             }
             $value = $this->validateAndTrimHeader($header, $value);
-            $normalized = self::lowercase($header);
+            $normalized = \strtr($header, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz');
             if (isset($this->headerNames[$normalized])) {
                 $header = $this->headerNames[$normalized];
                 $this->headers[$header] = \array_merge($this->headers[$header], $value);

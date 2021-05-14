@@ -11,6 +11,8 @@ use Psr\Http\Message\{ServerRequestInterface, StreamInterface, UploadedFileInter
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
+ *
+ * @final This class should never be extended. See https://github.com/Nyholm/psr7/blob/master/doc/final.md
  */
 class ServerRequest implements ServerRequestInterface
 {

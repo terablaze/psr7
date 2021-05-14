@@ -28,9 +28,9 @@
         "psr/http-factory": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5",
+        "phpunit/phpunit": "^7.5 || 8.5 || 9.4",
         "php-http/psr7-integration-tests": "^1.0",
-        "http-interop/http-factory-tests": "dev-master",
+        "http-interop/http-factory-tests": "^0.9",
         "symfony/error-handler": "^4.4"
     },
     "provide": {
@@ -47,13 +47,9 @@
             "Tests\\TeraBlaze\\Psr7\\": "tests/"
         }
     },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-ci": "vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage.xml"
-    },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.4-dev"
         }
     }
 }

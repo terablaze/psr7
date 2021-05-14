@@ -11,6 +11,8 @@ use Psr\Http\Message\{ResponseInterface, StreamInterface};
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
+ *
+ * @final This class should never be extended. See https://github.com/Nyholm/psr7/blob/master/doc/final.md
  */
 class Response implements ResponseInterface
 {
@@ -74,7 +76,7 @@ class Response implements ResponseInterface
 
         $code = (int) $code;
         if ($code < 100 || $code > 599) {
-            throw new \InvalidArgumentException('Status code has to be an integer between 100 and 599');
+            throw new \InvalidArgumentException(\sprintf('Status code has to be an integer between 100 and 599. A status code of %d was given', $code));
         }
 
         $new = clone $this;

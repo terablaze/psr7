@@ -2,7 +2,6 @@
 
 A super lightweight PSR-7 implementation. Very strict and very fast.
 
-
 ## Installation
 
 ```bash
@@ -44,7 +43,6 @@ $response = $psr18Client->sendRequest($request);
 ```
 
 ### Create server requests
-
 The [`terablaze/psr7-server`](https://github.com/terablaze/psr7-server) package can be used
 to create server requests from PHP superglobals.
 
@@ -68,7 +66,7 @@ $serverRequest = $creator->fromGlobals();
 ### Emitting a response
 
 ```bash
-composer require zendframework/zend-httphandlerrunner
+composer require laminas/laminas-httphandlerrunner
 ```
 
 ```php
@@ -76,5 +74,5 @@ $psr17Factory = new \TeraBlaze\Psr7\Factory\Psr17Factory();
 
 $responseBody = $psr17Factory->createStream('Hello world');
 $response = $psr17Factory->createResponse(200)->withBody($responseBody);
-(new \Zend\HttpHandlerRunner\Emitter\SapiEmitter())->emit($response);
+(new \Laminas\HttpHandlerRunner\Emitter\SapiEmitter())->emit($response);
 ```

@@ -11,6 +11,8 @@ use Psr\Http\Message\{StreamInterface, UploadedFileInterface};
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
+ *
+ * @final This class should never be extended. See https://github.com/Nyholm/psr7/blob/master/doc/final.md
  */
 class UploadedFile implements UploadedFileInterface
 {
@@ -113,9 +115,11 @@ class UploadedFile implements UploadedFileInterface
             return $this->stream;
         }
 
-        $resource = \fopen($this->file, 'r');
-
-        return Stream::create($resource);
+        try {
+            return Stream::create(\fopen($this->file, 'r'));
+        } catch (\Throwable $e) {
+            throw new \RuntimeException('The file ' . $this->file . ' cannot be opened.');
+        }
     }
 
     public function moveTo($targetPath): void
@@ -134,8 +138,13 @@ class UploadedFile implements UploadedFileInterface
                 $stream->rewind();
             }
 
-            // Copy the contents of a stream into another stream until end-of-file.
-            $dest = Stream::create(\fopen($targetPath, 'w'));
+            try {
+                // Copy the contents of a stream into another stream until end-of-file.
+                $dest = Stream::create(\fopen($targetPath, 'w'));
+            } catch (\Throwable $e) {
+                throw new \RuntimeException('The file ' . $targetPath . ' cannot be opened.');
+            }
+
             while (!$stream->eof()) {
                 if (!$dest->write($stream->read(1048576))) {
                     break;

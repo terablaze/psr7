@@ -12,6 +12,8 @@ use Psr\Http\Message\UriInterface;
  * @author Tobias TeraBlaze <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>
  * @author Tomiwa Ibiwoye <tomiwa@teraboxx.com>
+ *
+ * @final This class should never be extended. See https://github.com/Nyholm/psr7/blob/master/doc/final.md
  */
 class HttplugFactory implements MessageFactory, StreamFactory, UriFactory
 {
